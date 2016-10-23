@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h1>Registrati</h1>
+<form method="POST" action="{% url 'save_register' %}">{% csrf_token %}
+  <table>
+    <tr>
+        <td>{{ utente.nome_utente.label_tag }}</td>
+        <td>{{ utente.nome_utente }}</td>
+    </tr>
+    <tr>
+        <td>{{ utente.password.label_tag }}</td>
+        <td>{{ utente.password }}</td>
+    </tr>
+  <tr>
+    <td colspan = 2>
+    <button type="submit" class="save btn btn-default">Salva</button>
+  </td>
+  </tr>
+</table>
+</form>
+
+{% endblock %}
